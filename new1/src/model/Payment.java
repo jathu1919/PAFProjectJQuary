@@ -12,7 +12,7 @@ public class Payment {
 	 try 
 	 { 
 	 Class.forName("com.mysql.jdbc.Driver"); 
-	 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/gbproject", "root", ""); 
+	 con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/gbproject", "root", ""); 
 	 //For testing
 	 System.out.print("Successfully connected to dataBase and server "); 
 	 } 
@@ -94,11 +94,11 @@ public class Payment {
 	 output += "<td>" + expiredDate + "</td>"; 
 	 output += "<td>" + cvv + "</td>"; 
 	 // buttons
-	 output += "<td><input name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btn btn-secondary\"></td>"
-				+ "<td><form method=\"post\" action=\"PAYMENT.jsp\">"
-				+ "<input name=\"btnRemove\" type=\"submit\" value=\"Remove\"class=\"btn btn-danger\">"
-				+ "<input name=\"payId\" type=\"hidden\" value=\"" + payId + "\">" + "</form></td></tr>";
-	 } 
+	 output += "<td><input name='btnUpdate' type='button' value='Update' "
+			 + "class='btnUpdate btn btn-secondary' data-payId='" + payId + "'></td>"
+			 + "<td><input name='btnRemove' type='button' value='Remove' "
+			 + "class='btnRemove btn btn-danger' data-payId='" + payId + "'></td></tr>";
+			} 
 	 con.close(); 
 	 // Complete the html table
 	 output += "</table>"; 

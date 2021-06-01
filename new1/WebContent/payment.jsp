@@ -42,7 +42,7 @@ session.setAttribute("statusMsg", stsMsg);
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="Components/items.js"></script>
+<script src="Components/payment.js"></script>
 <title>Payment Management</title>
 </head>
 <body>
@@ -72,7 +72,7 @@ session.setAttribute("statusMsg", stsMsg);
  out.print(session.getAttribute("statusMsg"));
 %>
 <br>
-<div id="divItemsGrid">
+<div id="divPaymentGrid">
 <%
 
 Payment payObj = new Payment();

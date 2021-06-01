@@ -61,10 +61,20 @@ public class PaymentAPI extends HttpServlet{
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
 		Map paras = getParasMap(request);
-		 String output = payObj.deletePayment(paras.get("payID").toString());
-		response.getWriter().write(output);
+		try 
+		{
+			 String output = payObj.deletePayment(paras.get("payId").toString());
+				response.getWriter().write(output);
+		}
+		catch (Exception e)
+		 {
+			
+		 }
+		
+		
 	}
 	
 	// Convert request parameters to a Map
